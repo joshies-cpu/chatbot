@@ -1,0 +1,95 @@
+version: "3.1"
+
+rules:
+- rule: Greet the user with language detection
+  steps:
+  - intent: greet
+  - action: action_detect_language
+  - action: action_translate
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle product search
+  steps:
+  - intent: search_product
+  - action: action_search_product
+  - action: utter_search_results
+
+- rule: Handle product recommendations
+  steps:
+  - intent: recommend_products
+  - action: action_recommend_product
+  - action: utter_recommend_product
+
+- rule: Handle adding items to cart
+  steps:
+  - intent: add_to_cart
+  - action: action_add_to_cart
+  - action: utter_add_to_cart
+
+- rule: Handle removing items from cart
+  steps:
+  - intent: remove_from_cart
+  - action: action_remove_from_cart
+  - action: utter_remove_from_cart
+
+- rule: Handle viewing cart
+  steps:
+  - intent: view_cart
+  - action: action_view_cart
+  - action: utter_view_cart
+
+- rule: Handle clearing cart
+  steps:
+  - intent: clear_cart
+  - action: action_clear_cart
+  - action: utter_clear_cart
+
+- rule: Handle order status inquiries
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  - action: utter_order_status
+
+- rule: Handle payment method inquiries
+  steps:
+  - intent: payment_methods
+  - action: action_list_payment_methods
+  - action: utter_payment_methods
+
+- rule: Handle payment processing
+  steps:
+  - intent: process_payment
+  - action: action_process_payment
+  - action: utter_payment_processed
+
+- rule: Handle payment failure
+  steps:
+  - intent: payment_failure
+  - action: action_handle_payment_failure
+  - action: utter_payment_failure
+
+- rule: Handle delivery time inquiries
+  steps:
+  - intent: ask_delivery_time
+  - action: action_ask_delivery_time
+  - action: utter_ask_delivery_time
+
+- rule: Handle discount inquiries
+  steps:
+  - intent: ask_discounts
+  - action: action_ask_discounts
+
+- rule: Handle customer support requests
+  steps:
+  - intent: customer_support
+  - action: utter_customer_support
+
+- rule: Handle bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge

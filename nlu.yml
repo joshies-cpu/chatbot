@@ -1,0 +1,140 @@
+version: "3.1"
+
+nlu:
+- intent: search_product
+  examples: |
+    - Show me [fruits](category) under [10](max_price) dollars
+    - Find [dairy](category) products
+    - Search for [brown rice](brand)
+    - List items sorted by [price_low_to_high](sort_by)
+    - I need some fresh [vegetables](category)
+
+- intent: recommend_products
+  examples: |
+    - Can you suggest something for me?
+    - What do you recommend for me?
+    - Give me personalized recommendations
+    - Recommend products based on my searches
+
+- intent: order_status
+  examples: |
+    - Where is my order?
+    - Track my order
+    - Has my package been shipped?
+    - When will my order arrive? 
+
+- intent: add_to_cart
+  examples: |
+    - Add 2 kg of apples to my cart
+    - Can you add milk to my cart?
+    - I want to buy a loaf of bread
+
+- intent: remove_from_cart
+  examples: |
+    - Remove eggs from my cart
+    - I don't need bananas anymore
+    - Can you take out the cheese?
+
+- intent: clear_cart
+  examples: |
+    - Clear my cart
+    - Empty my cart
+    - Remove all items from my cart
+
+- intent: view_cart
+  examples: |
+    - Show me my cart
+    - What's in my cart?
+    - View my shopping cart
+
+- intent: payment_methods
+  examples: |
+    - What payment options do you support?
+    - Do you accept [Google Pay](payment_method)?
+    - Can I pay with a [credit card](payment_method)?
+
+- intent: process_payment
+  examples: |
+    - I want to pay using [credit card](payment_method)
+    - Process my payment with [Google Pay](payment_method)
+    - Can I pay using [PayPal](payment_method)?
+    - Complete my order with [cash on delivery](payment_method)
+    - Pay via [UPI](payment_method)
+    - Charge my [debit card](payment_method)
+
+- intent: customer_support
+  examples: |
+    - I need help with my order
+    - How can I contact customer support?
+    - There's an issue with my delivery
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - See you later
+    - Goodbye
+    - Talk to you soon
+
+- intent: affirm
+  examples: |
+    - yes
+    - correct
+    - that's right
+    - absolutely
+
+- intent: deny
+  examples: |
+    - no
+    - I don't think so
+    - not really
+    - nope
+
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Who created you?
+    - What are you?
+
+- intent: mood_great
+  examples: |
+    - I'm doing great
+    - feeling happy
+    - amazing
+
+- intent: mood_unhappy
+  examples: |
+    - I'm sad
+    - feeling down
+    - not happy
+    - I'm upset
+
+- intent: payment_failure
+  examples: |
+    - My payment failed, what should I do?
+    - The transaction was declined.
+    - Payment was unsuccessful.
+    - I got a payment error.
+    - My card was rejected.
+    - I can't complete my payment.
+    - The payment process didn't go through.
+    - My order was not paid.
+    - Payment isn't working.
+    - I need help with a failed payment.
+
+- intent: ask_delivery_time
+  examples: |
+    - How long does delivery take?
+    - Can you tell me the delivery time?
+
+- intent: ask_discounts
+  examples: |
+    - Are there any discounts available?
+    - Show me discounted items
+    - Do you have any deals or promotions?

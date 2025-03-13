@@ -1,0 +1,111 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: action_detect_language
+  - action: action_translate
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: action_detect_language
+  - action: action_translate
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: action_detect_language
+  - action: action_translate
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: user asks for customer support
+  steps:
+  - intent: customer_support
+  - action: utter_customer_support
+
+- story: user searches for a product
+  steps:
+  - intent: search_product
+  - action: action_search_product
+  - action: utter_search_results
+
+- story: user asks for recommendations
+  steps:
+  - intent: recommend_products
+  - action: action_recommend_product
+  - action: utter_recommend_product
+
+- story: user adds an item to the cart
+  steps:
+  - intent: add_to_cart
+  - action: action_add_to_cart
+  - action: utter_add_to_cart
+
+- story: user removes an item from the cart
+  steps:
+  - intent: remove_from_cart
+  - action: action_remove_from_cart
+  - action: utter_remove_from_cart
+
+- story: user views their cart
+  steps:
+  - intent: view_cart
+  - action: action_view_cart
+  - action: utter_view_cart
+
+- story: user clears their cart
+  steps:
+  - intent: clear_cart
+  - action: action_clear_cart
+  - action: utter_clear_cart
+
+- story: user asks about order status
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  - action: utter_order_status
+
+- story: user asks about payment methods
+  steps:
+  - intent: payment_methods
+  - action: action_list_payment_methods
+  - action: utter_payment_methods
+
+- story: user processes payment
+  steps:
+  - intent: process_payment
+  - action: action_process_payment
+  - action: utter_payment_processed
+
+- story: user encounters payment failure
+  steps:
+  - intent: payment_failure
+  - action: action_handle_payment_failure
+  - action: utter_payment_failure
+
+- story: user asks for delivery time
+  steps:
+  - intent: ask_delivery_time
+  - action: action_ask_delivery_time
+  - action: utter_ask_delivery_time
+
+- story: user asks about discounts
+  steps:
+  - intent: ask_discounts
+  - action: action_ask_discounts
