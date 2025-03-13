@@ -1,0 +1,168 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - search_product
+  - recommend_products
+  - add_to_cart
+  - remove_from_cart
+  - view_cart
+  - clear_cart
+  - order_status
+  - payment_methods
+  - process_payment
+  - customer_support
+  - payment_failure
+  - ask_delivery_time
+  - ask_discounts
+
+entities:
+  - category
+  - brand
+  - max_price
+  - min_price
+  - sort_by
+  - payment_method
+  - product_id
+  - order_id
+
+slots:
+  category:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category
+  brand:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: brand
+  max_price:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: max_price
+  min_price:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: min_price
+  sort_by:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sort_by
+  payment_method:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: payment_method
+  product_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product_id
+  order_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_id
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+  search_results:
+    type: list
+    mappings:
+      - type: custom
+
+  cart_items:
+    type: list
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you with your shopping today?"
+    - text: "Hi there! Welcome to our shopping assistant. What are you looking for today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+    - text: "Thanks for shopping with us. See you later!"
+
+  utter_customer_support:
+    - text: "I'll connect you with our customer support team. You can reach them at support@example.com or call 1-800-EXAMPLE."
+
+  utter_add_to_cart:
+    - text: "Item has been added to your cart!"
+
+  utter_remove_from_cart:
+    - text: "Item has been removed from your cart."
+
+  utter_view_cart:
+    - text: "Here are the items in your cart:\n{cart_items}"
+    - text: "Your cart is empty. Start adding some products!"
+
+  utter_clear_cart:
+    - text: "Your cart has been cleared."
+
+  utter_order_status:
+    - text: "Your order is currently {order_status}. Expected delivery date: {delivery_date}."
+
+  utter_payment_methods:
+    - text: "We accept Credit Card, Debit Card, PayPal, Google Pay, Apple Pay, and Cash on Delivery."
+
+  utter_bot_challenge:
+    - text: "I am a shopping assistant bot, designed to help you with your shopping needs."
+
+  utter_search_results:
+    - text: "Here are the products that match your search."
+
+  utter_recommend_product:
+    - text: "Based on your preferences, you might like these products."
+
+  utter_payment_processed:
+    - text: "Your payment has been processed successfully! Your order is confirmed."
+
+  utter_payment_failure:
+    - text: "It looks like your payment failed. Please check your payment method and try again."
+
+  utter_happy:
+    - text: "Great to hear! How can I assist you further?"
+
+  utter_cheer_up:
+    - text: "Sorry to hear that. Maybe finding some nice products will cheer you up!"
+
+  utter_did_that_help:
+    - text: "Did that help you feel better?"
+
+  utter_ask_delivery_time:
+    - text: "Your order is expected to arrive within 3-5 business days."
+
+  
+
+actions:
+  - action_detect_language
+  - action_translate
+  - action_search_product
+  - action_recommend_product
+  - action_add_to_cart
+  - action_remove_from_cart
+  - action_view_cart
+  - action_clear_cart
+  - action_check_order_status
+  - action_list_payment_methods
+  - action_process_payment
+  - action_handle_payment_failure
+  - action_ask_delivery_time
+  - action_ask_discounts
+
+

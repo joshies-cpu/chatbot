@@ -1,0 +1,38 @@
+# This file contains the different endpoints your bot can use.
+
+# Server that runs your custom actions
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# SQLite Tracker Store
+tracker_store:
+  type: SQL
+  dialect: "sqlite"
+  db: "tracker.db"  # This stores conversation history in SQLite
+
+# Event Broker (Optional for live event streaming)
+# Uncomment and configure this if needed
+# event_broker:
+#   type: "pika"
+#   url: "localhost"
+#   username: "user"
+#   password: "password"
+#   queue: "rasa_events"
+
+# Optional: Redis Tracker Store
+# Uncomment these lines if you want to use Redis
+# tracker_store:
+#   type: redis
+#   url: "localhost"
+#   port: 6379
+#   db: 0
+#   password: ""
+
+# Optional: MongoDB Tracker Store
+# Uncomment these lines if you want to use MongoDB
+# tracker_store:
+#   type: mongod
+#   url: "mongodb://localhost:27017"
+#   db: "rasa"
+#   username: "your_username"
+#   password: "your_password"
